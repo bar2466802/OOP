@@ -1,0 +1,27 @@
+1) Other comment styles like multi-line comments (/* . . . */), javadoc comments (/** . . . */)
+and single-line comments appearing in the middle of a line are not supported by s-Java .
+Any appearance of such comments is illegal and should result in a printed value of 1.
+2) Operators are not supported (int a = 3 - 5;, String b = "OO" + "P"; are illegal)
+3)Similarly, arrays are not supported in s-Java .
+4) name is any sequence (length > 0) of letters (uppercase or lowercase), digits and the underscore character ( ). name may not start with a digit. name may start with an underscore,
+but in such a case it must contain at least one more character (i.e., ’ ’ is not a legal name).
+5) A variable declaration must be encapsulated in a single line.
+6) There may not be two global variables with the same name (regardless of their types).
+7) However, a local variable can be defined with the same name as a global one (regardless
+of their types)
+8) Two local variables with the same name (regardless of their type) cannot be defined inside
+the same block. This also applies to variables with the same name as a method parameter.
+9) In case of multiple variables with the same name, a reference to that name refers to the
+variable in the most specific scope
+10) Any variable may be declared using the modifier final, which makes it a constant. Such
+variables must be initialized with some value at declaration time: final int a = 5;. The
+modifier should appear before the type of the variable, and not after. In other words, the
+following is not allowed: int final a = 5;.
+11) In other words, if a local variable is not initialized in
+its declaration, the code is only legal if:
+– The next line in which it appears is an assignment of a value to that variable.
+– It is never used.
+12)A variable a (global or local) can be assigned with another (global or local) variable b of the
+same type. Additionally, a double can also be assigned with an int, and a boolean can
+also be assigned with an int and a double
+13) 5.2.3 is unclear to me

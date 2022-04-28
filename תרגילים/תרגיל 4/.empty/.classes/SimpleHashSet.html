@@ -1,0 +1,297 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SimpleHashSet</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">&lt;empty package name&gt;</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SimpleHashSet (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SimpleHashSet</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    94.1%
+  </span>
+  <span class="absValue">
+    (16/ 17)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    88.2%
+  </span>
+  <span class="absValue">
+    (45/ 51)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;import java.util.Arrays;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp; * an abstract class implementing SimpleSet
+<i>5</i>&nbsp; * It extends the abstract class SpaceShip
+<i>6</i>&nbsp; * @author Bar Melinarskiy
+<i>7</i>&nbsp; * @version 31/8/20
+<i>8</i>&nbsp; */
+<i>9</i>&nbsp;public abstract class SimpleHashSet implements SimpleSet
+<i>10</i>&nbsp;{
+<i>11</i>&nbsp;	// constants
+<i>12</i>&nbsp;	/** Describes the higher load factor of a newly created hash set.
+<i>13</i>&nbsp;	 */
+<i>14</i>&nbsp;	protected final static float DEFAULT_HIGHER_CAPACITY = 0.75f;
+<i>15</i>&nbsp;	/** Describes the lower load factor of a newly created hash set.
+<i>16</i>&nbsp;	 */
+<i>17</i>&nbsp;	protected final static float DEFAULT_LOWER_CAPACITY = 0.25f;
+<i>18</i>&nbsp;	/** The first valid index of the table.
+<i>19</i>&nbsp;	 */
+<i>20</i>&nbsp;	protected final static int MIN_INDEX = 0;
+<i>21</i>&nbsp;	/** Flag for non-existing value
+<i>22</i>&nbsp;	 */
+<i>23</i>&nbsp;	protected final static int NON_EXISTING = -1;
+<i>24</i>&nbsp;	/** The const we use to keep the table size a power of 2.
+<i>25</i>&nbsp;	 */
+<i>26</i>&nbsp;	protected final static int CAPACITY_ADJUST_CONST = 2;
+<i>27</i>&nbsp;	/** Describes the capacity of a newly created hash set.
+<i>28</i>&nbsp;	 */
+<i>29</i>&nbsp;	protected final static int MIN_CAPACITY = 1;
+<i>30</i>&nbsp;	/** Flag for a cell in the table who has been removed
+<i>31</i>&nbsp;	 */
+<b class="fc"><i>32</i>&nbsp;	protected final static String DELETED_CELL = new String();</b>
+<i>33</i>&nbsp;	/** Describes the capacity of a newly created hash set.
+<i>34</i>&nbsp;	 */
+<i>35</i>&nbsp;	protected final static int INITIAL_CAPACITY = 16;
+<i>36</i>&nbsp;	/** Describes the size of a newly created hash set.
+<i>37</i>&nbsp;	 */
+<i>38</i>&nbsp;	protected final static int INITIAL_SIZE = 0;
+<i>39</i>&nbsp;	// instance variables
+<i>40</i>&nbsp;	/** Describes the current capacity (number of cells) of the table.
+<i>41</i>&nbsp;	 */
+<b class="fc"><i>42</i>&nbsp;	protected int capacity = INITIAL_CAPACITY;</b>
+<i>43</i>&nbsp;	/** Describes the number of elements currently in the set.
+<i>44</i>&nbsp;	 */
+<b class="fc"><i>45</i>&nbsp;	protected int size = INITIAL_SIZE;</b>
+<i>46</i>&nbsp;	/** Describes the higher load factor of the table.
+<i>47</i>&nbsp;	 */
+<b class="fc"><i>48</i>&nbsp;	protected float upperLoadFactor = DEFAULT_HIGHER_CAPACITY;</b>
+<i>49</i>&nbsp;	/** Describes the lower load factor of the table.
+<i>50</i>&nbsp;	 */
+<b class="fc"><i>51</i>&nbsp;	protected float lowerLoadFactor = DEFAULT_LOWER_CAPACITY;</b>
+<i>52</i>&nbsp;
+<i>53</i>&nbsp;	/*----=  Constructor  =-----*/
+<i>54</i>&nbsp;
+<i>55</i>&nbsp;	/** Constructs a new hash set with the default capacities given
+<i>56</i>&nbsp;	 *  in DEFAULT_LOWER_CAPACITY and DEFAULT_HIGHER_CAPACITY.
+<i>57</i>&nbsp;	 */
+<i>58</i>&nbsp;	protected SimpleHashSet()
+<b class="fc"><i>59</i>&nbsp;	{</b>
+<b class="fc"><i>60</i>&nbsp;		setCapacity(INITIAL_CAPACITY);</b>
+<b class="fc"><i>61</i>&nbsp;		setLowerLoadFactor(DEFAULT_LOWER_CAPACITY);</b>
+<b class="fc"><i>62</i>&nbsp;		setUpperLoadFactor(DEFAULT_HIGHER_CAPACITY);</b>
+<b class="fc"><i>63</i>&nbsp;	}</b>
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;	/** Constructs a new hash set with capacity INITIAL_CAPACITY.
+<i>66</i>&nbsp;	 * @param upperLoadFactor The upper load factor of the hash table.
+<i>67</i>&nbsp;	 * @param lowerLoadFactor The lower load factor of the hash table.
+<i>68</i>&nbsp;	 */
+<i>69</i>&nbsp;	protected SimpleHashSet(float upperLoadFactor, float lowerLoadFactor)
+<b class="nc"><i>70</i>&nbsp;	{</b>
+<b class="nc"><i>71</i>&nbsp;		setCapacity(INITIAL_CAPACITY);</b>
+<b class="nc"><i>72</i>&nbsp;		setLowerLoadFactor(lowerLoadFactor);</b>
+<b class="nc"><i>73</i>&nbsp;		setUpperLoadFactor(upperLoadFactor);</b>
+<b class="nc"><i>74</i>&nbsp;	}</b>
+<i>75</i>&nbsp;
+<i>76</i>&nbsp;	/*----=  Abstract Methods  =-----*/
+<i>77</i>&nbsp;	/** Adjust capacity of table after insert / remove.
+<i>78</i>&nbsp;	 */
+<i>79</i>&nbsp;	protected abstract void adjustToCapacity();
+<i>80</i>&nbsp;
+<i>81</i>&nbsp;	/*----=  Instance Methods  =-----*/
+<i>82</i>&nbsp;	/** Get the number of elements currently in the set
+<i>83</i>&nbsp;	 * @return The number of elements currently in the set
+<i>84</i>&nbsp;	 */
+<i>85</i>&nbsp;	public int size()
+<i>86</i>&nbsp;	{
+<b class="fc"><i>87</i>&nbsp;		return size;</b>
+<i>88</i>&nbsp;	}
+<i>89</i>&nbsp;	/** Get the current capacity (number of cells) of the table.
+<i>90</i>&nbsp;	 * @return The current capacity (number of cells) of the table.
+<i>91</i>&nbsp;	 */
+<i>92</i>&nbsp;	int	capacity()
+<i>93</i>&nbsp;	{
+<b class="fc"><i>94</i>&nbsp;		return capacity;</b>
+<i>95</i>&nbsp;	}
+<i>96</i>&nbsp;	/** Get the lower load factor of the table.
+<i>97</i>&nbsp;	 * @return the lower load factor of the table.
+<i>98</i>&nbsp;	 */
+<i>99</i>&nbsp;	protected float	getLowerLoadFactor()
+<i>100</i>&nbsp;	{
+<b class="fc"><i>101</i>&nbsp;		return lowerLoadFactor;</b>
+<i>102</i>&nbsp;	}
+<i>103</i>&nbsp;	/** get the higher load factor of the table.
+<i>104</i>&nbsp;	 * @return the higher load factor of the table.
+<i>105</i>&nbsp;	 */
+<i>106</i>&nbsp;	protected float	getUpperLoadFactor()
+<i>107</i>&nbsp;	{
+<b class="fc"><i>108</i>&nbsp;		return upperLoadFactor;</b>
+<i>109</i>&nbsp;	}
+<i>110</i>&nbsp;	/** Add to table from the given values.
+<i>111</i>&nbsp;	 * Duplicate values should be ignored.
+<i>112</i>&nbsp;	 * @param data Values to add to the set
+<i>113</i>&nbsp;	 */
+<i>114</i>&nbsp;	protected void add(String[] data)
+<i>115</i>&nbsp;	{
+<i>116</i>&nbsp;		//get only unique values from the given table
+<b class="fc"><i>117</i>&nbsp;		String[] uniqueData = Arrays.stream(data).distinct().toArray(String[]::new);</b>
+<b class="fc"><i>118</i>&nbsp;		int index = INITIAL_SIZE;</b>
+<b class="fc"><i>119</i>&nbsp;		for(String cell : uniqueData)</b>
+<i>120</i>&nbsp;		{
+<b class="fc"><i>121</i>&nbsp;			index++;</b>
+<b class="fc"><i>122</i>&nbsp;			if(cell != DELETED_CELL &amp;&amp; cell != null)</b>
+<i>123</i>&nbsp;			{
+<b class="fc"><i>124</i>&nbsp;				add(cell);</b>
+<i>125</i>&nbsp;			}
+<i>126</i>&nbsp;		}
+<b class="fc"><i>127</i>&nbsp;	}</b>
+<i>128</i>&nbsp;	/** Calc the current load factor of the table.
+<i>129</i>&nbsp;	 * @return the current load factor of the table.
+<i>130</i>&nbsp;	 */
+<i>131</i>&nbsp;	protected float	getLoadFactor()
+<i>132</i>&nbsp;	{
+<b class="fc"><i>133</i>&nbsp;		return size / (float)capacity;</b>
+<i>134</i>&nbsp;	}
+<i>135</i>&nbsp;	/** check capacity of table after insert / remove.
+<i>136</i>&nbsp;	 * If needed then calling adjustCapacity to fix the table.
+<i>137</i>&nbsp;	 * @param afterInsert true if the method was called after insert,
+<i>138</i>&nbsp;	 * false if after delete
+<i>139</i>&nbsp;	 */
+<i>140</i>&nbsp;	protected void checkCapacity(boolean afterInsert)
+<i>141</i>&nbsp;	{
+<b class="fc"><i>142</i>&nbsp;		int newCapacity = capacity;</b>
+<b class="fc"><i>143</i>&nbsp;		float currentLoadFactor = getLoadFactor();</b>
+<b class="fc"><i>144</i>&nbsp;		if(afterInsert &amp;&amp; currentLoadFactor &gt; getUpperLoadFactor())</b>
+<i>145</i>&nbsp;		{
+<b class="fc"><i>146</i>&nbsp;			newCapacity = capacity * CAPACITY_ADJUST_CONST;</b>
+<i>147</i>&nbsp;
+<i>148</i>&nbsp;		}
+<b class="fc"><i>149</i>&nbsp;		else if(!afterInsert &amp;&amp; currentLoadFactor &lt; getLowerLoadFactor())</b>
+<i>150</i>&nbsp;		{
+<b class="nc"><i>151</i>&nbsp;			newCapacity = Math.max(MIN_CAPACITY, (capacity / CAPACITY_ADJUST_CONST));</b>
+<i>152</i>&nbsp;		}
+<i>153</i>&nbsp;
+<b class="fc"><i>154</i>&nbsp;		if(capacity != newCapacity)</b>
+<i>155</i>&nbsp;		{
+<b class="fc"><i>156</i>&nbsp;			setCapacity(newCapacity);</b>
+<b class="fc"><i>157</i>&nbsp;			adjustToCapacity();</b>
+<i>158</i>&nbsp;		}
+<b class="fc"><i>159</i>&nbsp;	}</b>
+<i>160</i>&nbsp;	/** set the current capacity (number of cells) of the table.
+<i>161</i>&nbsp;	 * @param newCapacity - The new capacity (number of cells) of the table.
+<i>162</i>&nbsp;	 */
+<i>163</i>&nbsp;	protected void setCapacity(int newCapacity)
+<i>164</i>&nbsp;	{
+<b class="fc"><i>165</i>&nbsp;		capacity = newCapacity;</b>
+<b class="fc"><i>166</i>&nbsp;	}</b>
+<i>167</i>&nbsp;	/** Set the lower load factor of the table.
+<i>168</i>&nbsp;	 * @param newFactor the new lower load factor of the table.
+<i>169</i>&nbsp;	 */
+<i>170</i>&nbsp;	protected void setLowerLoadFactor(float newFactor)
+<i>171</i>&nbsp;	{
+<b class="fc"><i>172</i>&nbsp;		lowerLoadFactor = newFactor;</b>
+<b class="fc"><i>173</i>&nbsp;	}</b>
+<i>174</i>&nbsp;	/** Set the higher load factor of the table.
+<i>175</i>&nbsp;	 * @param newFactor the new higher load factor of the table.
+<i>176</i>&nbsp;	 */
+<i>177</i>&nbsp;	protected void setUpperLoadFactor(float newFactor)
+<i>178</i>&nbsp;	{
+<b class="fc"><i>179</i>&nbsp;		upperLoadFactor = newFactor;</b>
+<b class="fc"><i>180</i>&nbsp;	}</b>
+<i>181</i>&nbsp;	/**
+<i>182</i>&nbsp;	 * Clamps hashing indices to fit within the current table capacity.
+<i>183</i>&nbsp;	 * @param index the index before clamping.
+<i>184</i>&nbsp;	 * @return an index properly clamped.
+<i>185</i>&nbsp;	 */
+<i>186</i>&nbsp;	protected int clamp(int index)
+<i>187</i>&nbsp;	{
+<b class="fc"><i>188</i>&nbsp;		return index &amp; (capacity() - 1);</b>
+<i>189</i>&nbsp;	}
+<i>190</i>&nbsp;	/**
+<i>191</i>&nbsp;	 * Computes key.hashCode()
+<i>192</i>&nbsp;	 * @param value value to calc hash for
+<i>193</i>&nbsp;	 * @return the hase code of the given value
+<i>194</i>&nbsp;	 */
+<i>195</i>&nbsp;	protected int hash(String value)
+<i>196</i>&nbsp;	{
+<b class="fc"><i>197</i>&nbsp;		return (value == null) ? 0 : value.hashCode() ;</b>
+<i>198</i>&nbsp;	}
+<i>199</i>&nbsp;	/** Increase the table size by 1.
+<i>200</i>&nbsp;	 */
+<i>201</i>&nbsp;	protected void increaseSize()
+<i>202</i>&nbsp;	{
+<b class="fc"><i>203</i>&nbsp;		size++;</b>
+<b class="fc"><i>204</i>&nbsp;		checkCapacity(true);</b>
+<b class="fc"><i>205</i>&nbsp;	}</b>
+<i>206</i>&nbsp;	/** Decrease the table size by 1.
+<i>207</i>&nbsp;	 */
+<i>208</i>&nbsp;	protected void decreaseSize()
+<i>209</i>&nbsp;	{
+<b class="fc"><i>210</i>&nbsp;		size--;</b>
+<b class="fc"><i>211</i>&nbsp;		checkCapacity(false);</b>
+<b class="fc"><i>212</i>&nbsp;	}</b>
+<i>213</i>&nbsp;}
+<i>214</i>&nbsp;
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-09-01 23:13</div>
+</div>
+</body>
+</html>

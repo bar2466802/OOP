@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Book
+comment0.text=\r\n\ This\ class\ represents\ a\ book,\ which\ has\ a\ title,\ author,\ year\ of\ publication\ and\ different\ literary\ aspects.\r\n\ @author\ Bar\ Melinarskiy\r\n\ @version\ 16/8/20\r\n
+comment1.params=bookTitle\ bookAuthor\ bookYearOfPublication\ bookComicValue\ bookDramaticValue\ bookEducationalValue
+comment1.target=Book(java.lang.String,\ java.lang.String,\ int,\ int,\ int,\ int)
+comment1.text=\r\n\ Creates\ a\ new\ book\ with\ the\ given\ characteristic.\r\n\ @param\ bookTitle\ The\ title\ of\ the\ book.\r\n\ @param\ bookAuthor\ The\ name\ of\ the\ author\ of\ the\ book.\r\n\ @param\ bookYearOfPublication\ The\ year\ the\ book\ was\ published.\r\n\ @param\ bookComicValue\ The\ comic\ value\ of\ the\ book.\r\n\ @param\ bookDramaticValue\ The\ dramatic\ value\ of\ the\ book.\r\n\ @param\ bookEducationalValue\ The\ educational\ value\ of\ the\ book.\r\n
+comment2.params=
+comment2.target=java.lang.String\ stringRepresentation()
+comment2.text=\r\n\ Returns\ a\ string\ representation\ of\ the\ book,\ which\ is\ a\ sequence\r\n\ of\ the\ title,\ author,\ year\ of\ publication\ and\ the\ total\ literary\ value\ of\ the\ book,\ separated\ by\ \r\n\ commas,\ inclosed\ in\ square\ brackets.\ For\ example,\ if\ the\ book\ is\ \r\n\ titled\ "Monkey\ Feet",\ was\ written\ by\ Ernie\ Douglas,\ published\ in\ 1987\ and\ has\ a\ comic\ value\ of\ 7,\ \r\n\ dramatic\ value\ of\ 3\ and\ an\ educational\ value\ of\ 1,\ this\ method\ will\ return\ the\ string\:\ \r\n\ "[MonkeyFeet,Ernie\ Douglas,1987,11]"\ \r\n\ @return\ the\ String\ representation\ of\ this\ book.\r\n
+comment3.params=
+comment3.target=int\ getLiteraryValue()
+comment3.text=\r\n\ @return\ the\ literary\ value\ of\ this\ book,\ which\ is\ defined\ as\ the\ sum\ of\ its\ comic\ value,\ its\ dramatic\r\n\ value\ and\ its\ educational\ value.\r\n
+comment4.params=borrowerId
+comment4.target=void\ setBorrowerId(int)
+comment4.text=\r\n\ Sets\ the\ given\ id\ as\ the\ id\ of\ the\ current\ borrower\ of\ this\ book,\ -1\ if\ no\ patron\ is\ currently\ borrowing\r\n\ it.\r\n\ @param\ borrowerId\ the\ id\ of\ the\ current\ borrower\ of\ this\ book\r\n
+comment5.params=
+comment5.target=int\ getCurrentBorrowerId()
+comment5.text=\r\n\ @return\ the\ id\ of\ the\ current\ borrower\ of\ this\ book.\r\n
+comment6.params=
+comment6.target=void\ returnBook()
+comment6.text=\r\n\ Marks\ this\ book\ as\ returned.\r\n
+numComments=7

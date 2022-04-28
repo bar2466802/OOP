@@ -1,0 +1,89 @@
+moshe.bengi
+bar246802
+
+
+=============================
+=      File description     =
+=============================
+the main package is oop.ex6
+there is three sub package:
+
+main:
+Sjavac - the runner file that also print the result
+
+ProgramProcessing:
+CompileProgram - the compile class - checks if the file in the second view
+CompilingException - an exception class, manage all the problems in the files
+Method - the method class, an extension of the scope method as every class is a method
+Parameter - the parameter class, represent a parameter with type and fields
+ProcessesFile - the first processing of the class, checks if every line is good by its own
+Program - the program class, inherit from scope
+Scope - the scope class, has its parameters and indexes.
+
+a sub package ofProgramProcessing:
+Enums:
+ScopesType - enum for the types of the scopes - method or if/ while
+ParamType - enum for the types of parameters - string, char, int, double and boolean
+ValidEndOfLine - enum for the ends of line - ";", "{", "}"
+
+Utils:
+FileUtils - utils for a file, has the file2array method
+RegexUtils - utils for the regex has the test and getValue methods
+
+=============================
+=          Design           =
+=============================
+the main method is Sjavac, it gets a file and checks it.
+the main method call the process file and compile
+there is three packages, one for the processing itself, one for the main function and one for general utils
+for files and regexes
+we chose to design three different packs because they have a different role in the program and it didnt make
+sense to us to create just one pack. in addition we chose to create a scope class and inherit from it in the
+program and method as they are kinds of scope. we create an "empty" class for program (just extends scope)
+because its not just another scope and we might want to regard it later differently.
+
+=============================
+=  Implementation details   =
+=============================
+the main principle of the program is smart use of exception. every problem in the file cause an exception and
+the main method cache it and manage it. there is only one place of printing to the "err" and if we want to
+manage the exception differently we can do it easily. another is the reason we chose to use exception to
+handle the s-Java code errors is we dont have to "worry" and use many "if's" to handle an error and we can call
+many void functions that do there checks and throw exceptions if necessary.
+
+the main process is read the code twice. the first to check every line is valid by itself and create the
+scopes and params to the second check.
+the second check handle things that we could not check before (ie if the global was init before use and if the
+call for a function is valid).
+the two classes that do the job are CompileProgram and ProcessesFile which have one method that called from
+the main method. those methods call the other methods in the classes for checks and use the other classes
+
+a non trivial implementation we did is of the function that find the current scope with the index of line.
+our problem was in fact every line belongs to many scopes (the inner and every outer of him). we solve the
+problem by sorting the scopes by size - from small to big. and return the first one that contains the line.
+we sort by implement the comparable interface and calculate the size of every scope.
+
+=============================
+=    Answers to questions   =
+=============================
+if we would have get another types of variables we would have add them to the enum file of types (paramTypes)
+this is the only place there is a list of the types. we would create an enum with the relevant regex and add
+it to the list of types.
+
+if we would have want to add:
+
+Different methods’ types - we would have change the regex for a row of start method. in addition we would want
+to use method for assigment of params, and for this we would have add this case in the check of assigment row
+and of course check the return type of the function in the second check.
+
+Using methods of standart java - we would have add them to the list of functions according to there arguments
+and names (before the second run)
+
+we used the regular expressions in two main places:
+the first is for the validity of line - we use different regex to check whether our line is valid and what its
+type. (in the ValidEndOfLine enum)
+example: "^\s*}\s*" to the case of an end of scope
+the second is for the validity of type of parameter - we use different regex to check whether our type is
+valid and which type it is. (in the ParamType enum)
+example: "true|false|" + Constants.DOUBLE_NUM  - we know that a boolean might "look like" double or be one of
+the saved words - true/ false so we used the regex of the double.

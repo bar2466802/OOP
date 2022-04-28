@@ -1,0 +1,55 @@
+bar246802
+
+
+
+
+=============================
+=      File description     =
+=============================
+SpaceShip.java - implements the space ship class, its an abstract class with the ship template
+SpaceShipFactory.java -  implements the space ship factory class according to the user input
+AggressiveShip.java -  implements the aggressive space ship class
+BasherShip.java -  implements the basher space ship class
+RunnerShip.java -  implements the runner space ship class
+DrunkardShip.java -  implements the drunkard space ship class
+SpecialShip.java -  implements the special space ship class
+HumanShip.java -  implements the user controlled space ship class
+
+
+=============================
+=          Design           =
+=============================
+I implemented the SpaceShip class as an abstract class - that way each new type of space ship will extend the SpaceShip class and
+will have the same basic properties and thus be obligated to implement the abstract method "doAction".
+This design allows the spaceship type classes to be extremely small and specific to the current
+type because must of the logic exist in SpaceShip.java.
+
+
+=============================
+=  Implementation details   =
+=============================
+Firstly, I implemented the factory class by making a switch statement on the known ships' types.
+Then as I have written before I decided to make the SpaceShip class abstract and make each new type of ship to inherit from it (by creating a default contractor and initializing each ship there).
+I have made geters and seters method to access the deferent properties of the spaceship - that way if the rolls of the game change in the future it will be easier to implement the changes - 
+for example, right now whenever we change the energy of the ship, we need to check the current value limit (max energy value) and by creating the set method we can reuse the code and not make
+this check repeatedly.
+
+Each ship type can override the methods from the SpaceShip class because they are protected
+(an example will be the special ship as explained later on) this could be a disadvantage because we can bend the rolls of the game that way
+but in a game like this it is much more fun to have an enemy ship who is stronger and harder to fight against. That is why I didn't want to create the SpaceShip class as an interface
+I wanted each ship to have the freedom the make some changes.
+
+By making the SpaceShip the core class of all the spaceships it makes the code of every ship easier to understand because must of them only have one method in them the "doAction" method.
+=============================
+=    Answers to questions   =
+=============================
+
+1)behavior of the drunkard ship:
+I wanted to make this ship not able to remember how many rounds have passed since he lost fired (by making the number of days to be random)
+but then I saw in the ex's forum that this ship needs to follow the game rolls - so I changed it to randomly want to fly to the closest ship and fly away from it.
+The pilot is actually a good shooter by sometimes he thinks objects who are far away are much closer than how they really are - so he teleports
+
+2)behavior of the special ship:
+I made the special ship to be a boss enemy ship - meaning it is much stronger than the rest of the ships.
+It is a combo of the AggressiveShip, BasherShip, can always fire and every 100 rounds gets full energy.
+

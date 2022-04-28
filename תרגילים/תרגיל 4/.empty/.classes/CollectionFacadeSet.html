@@ -1,0 +1,150 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CollectionFacadeSet</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">&lt;empty package name&gt;</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CollectionFacadeSet (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CollectionFacadeSet</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (11/ 11)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;/**
+<i>2</i>&nbsp; * implements SimpleSet.
+<i>3</i>&nbsp; * Wrap an object implementing java’s Collection&lt;String&gt;.
+<i>4</i>&nbsp; * @author Bar Melinarskiy
+<i>5</i>&nbsp; * @version 31/8/20
+<i>6</i>&nbsp; */
+<i>7</i>&nbsp;public class CollectionFacadeSet implements SimpleSet
+<i>8</i>&nbsp;{
+<i>9</i>&nbsp;	// instance variables
+<i>10</i>&nbsp;	private java.util.Collection&lt;java.lang.String&gt; currentCollection;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;	/*----=  Constructor  =-----*/
+<i>13</i>&nbsp;	public CollectionFacadeSet(java.util.Collection&lt;java.lang.String&gt; collection)
+<b class="fc"><i>14</i>&nbsp;	{</b>
+<b class="fc"><i>15</i>&nbsp;		currentCollection = collection;</b>
+<b class="fc"><i>16</i>&nbsp;	}</b>
+<i>17</i>&nbsp;	/*----=  Instance Methods  =-----*/
+<i>18</i>&nbsp;	/**
+<i>19</i>&nbsp;	 * Add a specified element to the set if it&#39;s not already in it.
+<i>20</i>&nbsp;	 * @param newValue New value to add to the set
+<i>21</i>&nbsp;	 * @return False iff newValue already exists in the set
+<i>22</i>&nbsp;	 */
+<i>23</i>&nbsp;	@Override
+<i>24</i>&nbsp;	public boolean add(String newValue)
+<i>25</i>&nbsp;	{
+<b class="fc"><i>26</i>&nbsp;		if(!currentCollection.contains(newValue))</b>
+<i>27</i>&nbsp;		{
+<b class="fc"><i>28</i>&nbsp;			return currentCollection.add(newValue);</b>
+<i>29</i>&nbsp;		}
+<b class="fc"><i>30</i>&nbsp;		return false;</b>
+<i>31</i>&nbsp;	}
+<i>32</i>&nbsp;
+<i>33</i>&nbsp;	/**
+<i>34</i>&nbsp;	 * Look for a specified value in the set.
+<i>35</i>&nbsp;	 * @param searchVal Value to search for
+<i>36</i>&nbsp;	 * @return True if searchVal is found in the set
+<i>37</i>&nbsp;	 */
+<i>38</i>&nbsp;	@Override
+<i>39</i>&nbsp;	public boolean contains(String searchVal)
+<i>40</i>&nbsp;	{
+<b class="fc"><i>41</i>&nbsp;		return currentCollection.contains(searchVal);</b>
+<i>42</i>&nbsp;	}
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;	/**
+<i>45</i>&nbsp;	 * Remove the input element from the set.
+<i>46</i>&nbsp;	 * @param toDelete Value to delete
+<i>47</i>&nbsp;	 * @return True iff toDelete is found and deleted
+<i>48</i>&nbsp;	 */
+<i>49</i>&nbsp;	@Override
+<i>50</i>&nbsp;	public boolean delete(String toDelete)
+<i>51</i>&nbsp;	{
+<b class="fc"><i>52</i>&nbsp;		if(currentCollection.contains(toDelete))</b>
+<i>53</i>&nbsp;		{
+<b class="fc"><i>54</i>&nbsp;			return currentCollection.remove(toDelete);</b>
+<i>55</i>&nbsp;		}
+<b class="fc"><i>56</i>&nbsp;		return false;</b>
+<i>57</i>&nbsp;	}
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;	/**
+<i>60</i>&nbsp;	 * @return The number of elements currently in the set
+<i>61</i>&nbsp;	 */
+<i>62</i>&nbsp;	@Override
+<i>63</i>&nbsp;	public int size()
+<i>64</i>&nbsp;	{
+<b class="fc"><i>65</i>&nbsp;		return currentCollection.size();</b>
+<i>66</i>&nbsp;	}
+<i>67</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-09-01 23:13</div>
+</div>
+</body>
+</html>

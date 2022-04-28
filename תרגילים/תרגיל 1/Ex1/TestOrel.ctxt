@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=TestOrel
+comment0.text=\r\n\ Created\ by\:\ Evyatar\r\n\ version\ 5.0\r\n\ Changes\ history\:\r\n\ 23\:07\ \u200E08/\u200E08/\u200E2020\ -\ Orel\ -\ \ \ \ willEnjoyBook\ can\ be\ >\=\ and\ not\ >.\r\n\ Test\ flow\ was\ adjusted\ accordingly\ in\ "test\ Library\ methods".\r\n\ <p>\r\n\ 01\:37\ \u200E24/\u200E03/\u200E2018\ -\ Kali\ -\ \ \ \ When\ adding\ a\ patron\ that\ was\ already\ registered\ to\ the\ library,\ the\r\n\ return\ value\ should\ by\ a\ \!negative\ number\!\ (as\ far\ as\ I\ understand\ the\ API),\r\n\ unlike\ a\ book\ that\ was\ added\ twice\ -\ in\ that\ case\ should\ return\ existing\ book\r\n\ id.\ Changed\ tests\:\ 8.1,\ 14,\ 28.\r\n\ 01\:47\ 24/\u200E03/\u200E2018\ -\ Kali\ -\ \ \ \ Reverted\ changes\ (8.1,\ 14)\ due\ to\ forum\ answer.\r\n\ <p>\r\n\ 21\:49\ 25/\u200E03/\u200E2018\ -\ Evyatar\ -\ Now\ support\ any\ non-negative\ int's\ as\ ID's\ for\ books\ and\ patrons.\ Added\ two\r\n\ libraries\ tests.\ willEnjoyBook\ has\ to\ be\ >\ and\ not\ >\=.\r\n
+comment1.params=
+comment1.target=TestOrel()
+comment2.params=
+comment2.target=void\ test5()
+numComments=3

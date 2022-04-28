@@ -1,0 +1,8 @@
+jar cvf ex3.jar Spaceship.java Locker.java BasicStorage.java LongTermStorage.java HotelSortingByProximityComparator.java SpaceshipTest.java Locker.java Locker.java BoopingSiteTest.java BoopingSite.java BoopingSite.java HotelSortingByRatingsComparator.java LockerTest.java  LongTermTest.java SpaceshipDepositoryTest.java SpaceshipDepositoryTest.java StorageWithLTS.java  README
+
+javac -cp ex3_resources.jar *.java
+
+javac -source 1.6 -target 1.6 -cp ex3_resources.jar *.java
+javac  SimpleHashSet.java OpenHashSet.java ClosedHashSet.java CollectionFacadeSet.java SimpleSetPerformanceAnalyzer.java
+
+jar cvf ex3.ja *.java  README

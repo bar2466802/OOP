@@ -1,0 +1,72 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SimpleSet</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">&lt;empty package name&gt;</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SimpleSet (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">SimpleSet</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;
+<i>2</i>&nbsp;public interface SimpleSet {
+<i>3</i>&nbsp;	/**
+<i>4</i>&nbsp;	 * Add a specified element to the set if it&#39;s not already in it.
+<i>5</i>&nbsp;	 * @param newValue New value to add to the set
+<i>6</i>&nbsp;	 * @return False iff newValue already exists in the set
+<i>7</i>&nbsp;	 */
+<i>8</i>&nbsp;	boolean add(String newValue);
+<i>9</i>&nbsp;	/**
+<i>10</i>&nbsp;	 * Look for a specified value in the set.
+<i>11</i>&nbsp;	 * @param searchVal Value to search for
+<i>12</i>&nbsp;	 * @return True iff searchVal is found in the set
+<i>13</i>&nbsp;	 */
+<i>14</i>&nbsp;	boolean contains(String searchVal);
+<i>15</i>&nbsp;	/**
+<i>16</i>&nbsp;	 * Remove the input element from the set.
+<i>17</i>&nbsp;	 * @param toDelete Value to delete
+<i>18</i>&nbsp;	 * @return True iff toDelete is found and deleted
+<i>19</i>&nbsp;	 */
+<i>20</i>&nbsp;	boolean delete(String toDelete);
+<i>21</i>&nbsp;	/**
+<i>22</i>&nbsp;	 * @return The number of elements currently in the set
+<i>23</i>&nbsp;	 */
+<i>24</i>&nbsp;	public int size();
+<i>25</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-09-01 23:13</div>
+</div>
+</body>
+</html>

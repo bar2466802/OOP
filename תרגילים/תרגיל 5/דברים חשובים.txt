@@ -1,0 +1,3 @@
+~oops/bin/ex5/ex5SchoolSolution /cs/usr/bar246802/Desktop/OOP/Exercises/Ex5/Folders4.0/Test_directory /cs/usr/bar246802/Desktop/OOP/Exercises/Ex5/Folders4.0/MyCommandFiles/EmptyLines
+
+jar -cvf ex5.jar README filesprocessing/*.java filesprocessing/orders/*.java filesprocessing/filters/*.java 

@@ -1,0 +1,368 @@
+Shalom,
+
+This is an automated message.
+
+The submission of Bar Melinarskiy (bar246802) from Fri Aug 28 00:34:14 2020 for ex3 in Intro to Object Oriented - Summer was processed
+
+PDF created successfully, and can be downloaded from:
+http://moodle2.cs.huji.ac.il/nu19/mod/assign/view.php?course=oops&name=ex3
+
+
+Running the tests gave the following output:
+/tmp/bodek.57Z6ID/oops/ex3/bar246802/presubmission/testdir
+
+==============================
+========= EX3 TESTER =========
+==============================
+===== EXTRACTING JAR =====
+Done.
+
+===== CHECKING FILES =====
+
+
+===== ANALYZE README =====
+
+
+===== COMPILE CODE =====
+compilation error:
+
+StorageWithLTS.java:8: error: cannot find symbol
+public abstract class StorageWithLTS extends BasicStorage
+                                             ^
+  symbol: class BasicStorage
+LongTermStorage.java:7: error: cannot find symbol
+public class LongTermStorage extends BasicStorage
+                                     ^
+  symbol: class BasicStorage
+HotelSortingByProximityComparator.java:35: error: cannot find symbol
+                int poiCompare = Integer.compare(hotel2.getNumPOI(), hotel1.getNumPOI());
+
+                                        ^
+  symbol:   method compare(int,int)
+  location: class Integer
+HotelSortingByRatingsComparator.java:23: error: cannot find symbol
+                int ratingCompare = Integer.compare(hotel2.getStarRating(), hotel1.getStarRating());
+                                           ^
+  symbol:   method compare(int,int)
+  location: class Integer
+StorageWithLTS.java:63: error: cannot find symbol
+                        if(firstType.equals(type) && getItemCount(secondType) > INITIAL_SIZE)
+                                                     ^
+  symbol:   method getItemCount(String)
+  location: class StorageWithLTS
+StorageWithLTS.java:63: error: cannot find symbol
+                        if(firstType.equals(type) && getItemCount(secondType) > INITIAL_SIZE)
+                                                                                ^
+  symbol:   variable INITIAL_SIZE
+  location: class StorageWithLTS
+StorageWithLTS.java:68: error: cannot find symbol
+                        else if(secondType.equals(type)&& getItemCount(firstType) > INITIAL_SIZE)
+                                                          ^
+  symbol:   method getItemCount(String)
+  location: class StorageWithLTS
+StorageWithLTS.java:68: error: cannot find symbol
+                        else if(secondType.equals(type)&& getItemCount(firstType) > INITIAL_SIZE)
+                                                                                    ^
+  symbol:   variable INITIAL_SIZE
+  location: class StorageWithLTS
+Locker.java:26: error: cannot find symbol
+                setCapacity(capacity);
+                ^
+  symbol:   method setCapacity(int)
+  location: class Locker
+Locker.java:41: error: cannot find symbol
+                        String msgFormat = ERROR_PREFIX + ERROR_INSERT_CONTRADICTION;
+                                           ^
+  symbol:   variable ERROR_PREFIX
+  location: class Locker
+Locker.java:41: error: cannot find symbol
+                        String msgFormat = ERROR_PREFIX + ERROR_INSERT_CONTRADICTION;
+                                                          ^
+  symbol:   variable ERROR_INSERT_CONTRADICTION
+  location: class Locker
+Locker.java:44: error: cannot find symbol
+                        return INSERT_ERROR_CODE_CONTRADICTION;
+                               ^
+  symbol:   variable INSERT_ERROR_CODE_CONTRADICTION
+  location: class Locker
+Locker.java:47: error: cannot find symbol
+                if(checkIfThereEnoughRoom(item, n) == false)
+                   ^
+  symbol:   method checkIfThereEnoughRoom(Item,int)
+  location: class Locker
+Locker.java:49: error: cannot find symbol
+                        return INSERT_ERROR_CODE;
+                               ^
+  symbol:   variable INSERT_ERROR_CODE
+  location: class Locker
+Locker.java:52: error: cannot find symbol
+                if(getItemOccupiedPercentage(item, n) > MOVING_TO_LTS_THRESHOLD)
+                   ^
+  symbol:   method getItemOccupiedPercentage(Item,int)
+  location: class Locker
+Locker.java:59: error: cannot find symbol
+                        addToInventory(item, n);
+                        ^
+  symbol:   method addToInventory(Item,int)
+  location: class Locker
+Locker.java:62: error: cannot find symbol
+                return SUCCESS;
+                       ^
+  symbol:   variable SUCCESS
+  location: class Locker
+Locker.java:73: error: cannot find symbol
+                int currentCount = getItemCount(item.getType());
+                                   ^
+  symbol:   method getItemCount(String)
+  location: class Locker
+Locker.java:77: error: cannot find symbol
+                if(returnCode == SUCCESS)
+                                 ^
+  symbol:   variable SUCCESS
+  location: class Locker
+Locker.java:82: error: cannot find symbol
+                                returnCode = removeItem(item, amountToMove - n);
+                                             ^
+  symbol:   method removeItem(Item,int)
+  location: class Locker
+Locker.java:87: error: cannot find symbol
+                                addToInventory(item, n - amountToMove);
+                                ^
+  symbol:   method addToInventory(Item,int)
+  location: class Locker
+Locker.java:91: error: cannot find symbol
+                if(returnCode == SUCCESS)
+                                 ^
+  symbol:   variable SUCCESS
+  location: class Locker
+Locker.java:107: error: cannot find symbol
+                int amount = 1 , returnAmount = INITIAL_SIZE;
+                                                ^
+  symbol:   variable INITIAL_SIZE
+  location: class Locker
+Locker.java:108: error: cannot find symbol
+                while(calcItemOccupiedPercentage(item, amount) <= KEEPING_IN_LOCKER_THRESHOLD
+                      ^
+  symbol:   method calcItemOccupiedPercentage(Item,int)
+  location: class Locker
+LongTermStorage.java:16: error: cannot find symbol
+                setCapacity(LTS_CAPACITY);
+                ^
+  symbol:   method setCapacity(int)
+  location: class LongTermStorage
+LongTermStorage.java:26: error: cannot find symbol
+                if(checkIfThereEnoughRoom(item, n) == false)
+                   ^
+  symbol:   method checkIfThereEnoughRoom(Item,int)
+  location: class LongTermStorage
+LongTermStorage.java:28: error: cannot find symbol
+                        return INSERT_ERROR_CODE;
+                               ^
+  symbol:   variable INSERT_ERROR_CODE
+  location: class LongTermStorage
+LongTermStorage.java:31: error: cannot find symbol
+                addToInventory(item, n);
+                ^
+  symbol:   method addToInventory(Item,int)
+  location: class LongTermStorage
+LongTermStorage.java:32: error: cannot find symbol
+                return SUCCESS;
+                       ^
+  symbol:   variable SUCCESS
+  location: class LongTermStorage
+LongTermStorage.java:38: error: cannot find symbol
+                initializeStorage();
+                ^
+  symbol:   method initializeStorage()
+  location: class LongTermStorage
+LockerTest.java:66: error: cannot find symbol
+                assertNotNull(errorMessage, testLocker.getInventory());
+                                                      ^
+  symbol:   method getInventory()
+  location: variable testLocker of type Locker
+LockerTest.java:75: error: cannot find symbol
+                assertEquals(errorMessage, capacity, testLocker.getCapacity());
+                                                               ^
+  symbol:   method getCapacity()
+  location: variable testLocker of type Locker
+LockerTest.java:102: error: cannot find symbol
+                                         testLocker.getItemCount(allItems[typeIndex].getType()));
+                                                   ^
+  symbol:   method getItemCount(String)
+  location: variable testLocker of type Locker
+LockerTest.java:106: error: cannot find symbol
+                                        testLocker.getInventory().get(allItems[typeIndex].getType()) == count);
+                                                  ^
+  symbol:   method getInventory()
+  location: variable testLocker of type Locker
+LockerTest.java:111: error: cannot find symbol
+                                           testLocker.getInventory().get(allItems[typeIndex].getType()));
+                                                     ^
+  symbol:   method getInventory()
+  location: variable testLocker of type Locker
+LockerTest.java:152: error: cannot find symbol
+                assertTrue(errorMessage,testLocker.getAvailableCapacity() >= 80);
+                                                  ^
+  symbol:   method getAvailableCapacity()
+  location: variable testLocker of type Locker
+LockerTest.java:153: error: cannot find symbol
+                assertTrue(errorMessage,testLocker.getItemCount(allItems[ENGINE_INDEX].getType()) <= 2);
+                                                  ^
+  symbol:   method getItemCount(String)
+  location: variable testLocker of type Locker
+LockerTest.java:155: error: cannot find symbol
+                                   testLocker.getInventory().get(allItems[ENGINE_INDEX].getType()) <= 2);
+                                             ^
+  symbol:   method getInventory()
+  location: variable testLocker of type Locker
+LockerTest.java:157: error: cannot find symbol
+                                testLocker.getInventory().containsKey(allItems[ENGINE_INDEX].getType()));
+                                          ^
+  symbol:   method getInventory()
+  location: variable testLocker of type Locker
+LockerTest.java:185: error: cannot find symbol
+                                SUCCESS_CODE, testLocker.removeItem(allItems[FOOTBALL_INDEX], 1));
+                                                        ^
+  symbol:   method removeItem(Item,int)
+  location: variable testLocker of type Locker
+LockerTest.java:221: error: cannot find symbol
+                while(testLocker.getLongTermStorage().getAvailableCapacity() > 50 && i < 20)
+                                                     ^
+  symbol:   method getAvailableCapacity()
+  location: class LongTermStorage
+LockerTest.java:228: error: cannot find symbol
+                                testLocker.getLongTermStorage().getAvailableCapacity() < 50);
+                                                               ^
+  symbol:   method getAvailableCapacity()
+  location: class LongTermStorage
+LockerTest.java:237: error: cannot find symbol
+                Map<String, Integer> currentInventory = new HashMap<String, Integer>(testLocker.getInventory());
+                                                                                               ^
+  symbol:   method getInventory()
+  location: variable testLocker of type Locker
+LockerTest.java:243: error: cannot find symbol
+                assertEquals(0, testLocker.getInventory().size());
+                                          ^
+  symbol:   method getInventory()
+  location: variable testLocker of type Locker
+LockerTest.java:252: error: cannot find symbol
+                int count = testLocker.getItemCount(type);
+                                      ^
+  symbol:   method getItemCount(String)
+  location: variable testLocker of type Locker
+LockerTest.java:254: error: cannot find symbol
+                assertEquals(errorMessage, SUCCESS_CODE, testLocker.removeItem(itemToDelete, count));
+                                                                   ^
+  symbol:   method removeItem(Item,int)
+  location: variable testLocker of type Locker
+LockerTest.java:265: error: cannot find symbol
+                                         ERROR_CODE, testLocker.removeItem(allItems[FOOTBALL_INDEX], -2));
+                                                               ^
+  symbol:   method removeItem(Item,int)
+  location: variable testLocker of type Locker
+LockerTest.java:268: error: cannot find symbol
+                                ERROR_CODE, testLocker.removeItem(allItems[BIG_HELMET_INDEX], -2));
+                                                      ^
+  symbol:   method removeItem(Item,int)
+  location: variable testLocker of type Locker
+LockerTest.java:279: error: cannot find symbol
+                                SUCCESS_CODE, testLocker.removeItem(allItems[BIG_HELMET_INDEX], 1));
+                                                        ^
+  symbol:   method removeItem(Item,int)
+  location: variable testLocker of type Locker
+LockerTest.java:291: error: cannot find symbol
+                                         ERROR_CODE, testLocker.removeItem(allItems[BIG_HELMET_INDEX], 10));
+                                                               ^
+  symbol:   method removeItem(Item,int)
+  location: variable testLocker of type Locker
+LockerTestPresub.java:58: error: cannot find symbol
+                tmpLocker.getCapacity() == tmpLocker.getAvailableCapacity());
+                         ^
+  symbol:   method getCapacity()
+  location: variable tmpLocker of type Locker
+LockerTestPresub.java:58: error: cannot find symbol
+                tmpLocker.getCapacity() == tmpLocker.getAvailableCapacity());
+                                                    ^
+  symbol:   method getAvailableCapacity()
+  location: variable tmpLocker of type Locker
+LockerTestPresub.java:69: error: cannot find symbol
+                int j = tmpLocker.getInventory().get(item.getType());
+                                 ^
+  symbol:   method getInventory()
+  location: variable tmpLocker of type Locker
+LockerTestPresub.java:126: error: cannot find symbol
+                    tmpLocker.removeItem(bat, appearances - 1));
+                             ^
+  symbol:   method removeItem(Item,int)
+  location: variable tmpLocker of type Locker
+LongTermTest.java:57: error: cannot find symbol
+                assertNotNull(errorMessage, ltsTest.getInventory());
+                                                   ^
+  symbol:   method getInventory()
+  location: variable ltsTest of type LongTermStorage
+LongTermTest.java:66: error: cannot find symbol
+                assertEquals(errorMessage, capacity, ltsTest.getCapacity());
+                                                            ^
+  symbol:   method getCapacity()
+  location: variable ltsTest of type LongTermStorage
+LongTermTest.java:88: error: cannot find symbol
+                assertTrue(errorMessage, ltsTest.getInventory().size() > 0);
+                                                ^
+  symbol:   method getInventory()
+  location: variable ltsTest of type LongTermStorage
+LongTermTest.java:91: error: cannot find symbol
+                assertEquals(errorMessage, 0, ltsTest.getInventory().size());
+                                                     ^
+  symbol:   method getInventory()
+  location: variable ltsTest of type LongTermStorage
+LongTermTest.java:124: error: cannot find symbol
+                assertEquals(errorMessage, count, ltsTest.getItemCount(allItems[typeIndex].getType()));
+                                                         ^
+  symbol:   method getItemCount(String)
+  location: variable ltsTest of type LongTermStorage
+LongTermTest.java:128: error: cannot find symbol
+                                        ltsTest.getInventory().get(allItems[typeIndex].getType()) == count);
+                                               ^
+  symbol:   method getInventory()
+  location: variable ltsTest of type LongTermStorage
+LongTermTest.java:132: error: cannot find symbol
+                        assertNull(errorMessage, ltsTest.getInventory().get(allItems[typeIndex].getType()));
+                                                        ^
+  symbol:   method getInventory()
+  location: variable ltsTest of type LongTermStorage
+LongTermTest.java:185: error: cannot find symbol
+                                         ERROR_CODE, ltsTest.removeItem(allItems[FOOTBALL_INDEX], -2));
+                                                            ^
+  symbol:   method removeItem(Item,int)
+  location: variable ltsTest of type LongTermStorage
+LongTermTest.java:188: error: cannot find symbol
+                                         ERROR_CODE, ltsTest.removeItem(allItems[BIG_HELMET_INDEX], -2));
+                                                            ^
+  symbol:   method removeItem(Item,int)
+  location: variable ltsTest of type LongTermStorage
+LongTermTest.java:200: error: cannot find symbol
+                                         SUCCESS_CODE, ltsTest.removeItem(allItems[BIG_HELMET_INDEX], 1));
+                                                              ^
+  symbol:   method removeItem(Item,int)
+  location: variable ltsTest of type LongTermStorage
+LongTermTest.java:212: error: cannot find symbol
+                                         ERROR_CODE, ltsTest.removeItem(allItems[BIG_HELMET_INDEX], 10));
+                                                            ^
+  symbol:   method removeItem(Item,int)
+  location: variable ltsTest of type LongTermStorage
+LongTermTestPresub.java:50: error: cannot find symbol
+            assertTrue("capacity should be 1000", tmpStorage.getCapacity() == 1000);
+                                                            ^
+  symbol:   method getCapacity()
+  location: variable tmpStorage of type LongTermStorage
+LongTermTestPresub.java:52: error: cannot find symbol
+                    tmpStorage.getAvailableCapacity() == 1000);
+                              ^
+  symbol:   method getAvailableCapacity()
+  location: variable tmpStorage of type LongTermStorage
+LongTermTestPresub.java:64: error: cannot find symbol
+            assertEquals("no appearances for items that weren't added", 0, tmpStorage.getItemCount(engine.getType()));
+                                                                                     ^
+  symbol:   method getItemCount(String)
+  location: variable tmpStorage of type LongTermStorage
+68 errors

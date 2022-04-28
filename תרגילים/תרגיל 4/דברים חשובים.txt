@@ -1,0 +1,58 @@
+classes we need to use:
+java.util.TreeSet
+java.util.LinkedList
+java.util.HashSet (the last can’t be used in your own implementation obviously, only in the comparison part)
+מחלקות שסופקו לנו:
+1)SimpleSet.java: an interface consisting of the add(), delete(), contains(), and size() methods
+2)Ex4Utils.java: contains a single static helper method: file2array, which returns the lines
+in a specified file as an array
+3)data1.txt, data2.txt: files that will help you with the performance analysis (more details
+in the corresponding section)
+4)A skeleton for the RESULTS file which you’ll use in the analysis section
+
+Important Notes:
+1)In this exercise we are only going to deal with String elements and the default hash function
+for Strings implemented at String.hashCode()
+2)You are required to implement the open-hashing set using linked lists. You might be tempted to
+create an array of linked lists of Strings like that:
+LinkedList<String>[] arr = new LinkedList<String>[16];
+However, such arrays are illegal in Java (for reasons we won’t discuss here)
+What we can do instead:
+• Define a wrapper-class that has a LinkedList<String> and delegates methods to it, and have
+an array of that class instead
+• Extend CollectionFacadeSet and have an array of this subclass where each such facade wraps
+a LinkedList<String>
+3)do not use an ArrayList<LinkedList<String» instead of a standard array, since an ArrayList
+doesn’t provide as much control over its capacity – which is an important part of managing a hash
+table
+4)Closed hashing - c1 = 0.5 , c2 = 0.5 ensure that as long
+as the table is not full, a place for a new value will be found during the first capacity attempts.
+Therefore we’ll use these values, and always keep the table size a power of 2.
+5)What will happen if when deleting a value, we simply put null in its place?
+We therefore need a way to flag a cell as deleted, so that when searching we know to continue
+our search. Solve this issue in a way which uses only a constant addition in space and time
+(both when deleting and later when searching). Note that in any case your solution should
+not restrict the class’ functionality (by prohibiting insertion of a certain String for example).
+6)  For tableSize that is a power of 2, we have the special property that
+(n & (tableSize − 1)) == (n mod tableSize), Where & is the bitwise-AND operator in Java.
+Bottom line:
+For open-hashing use the index
+hash(e) & (tableSize − 1)
+For closed-hashing use the index
+(hash(e) + (i + i^2) * 0.5) & (tableSize − 1 )
+7)use System.nanoTime() to compute time differences
+8)Use 70000 iterations as the warmup before any contains operation, for every data structure except LinkedList (explanation
+ahead). In other words, for each data structure, excluding LinkedList, and for every contains
+operation, call the relevant contains method 70000 times without measuring, then measure
+the time it takes to do another 70000 iterations, and divide that by 70000. This will be your
+approximation for that operation
+9) As for LinkedList - you’ll find that its contains operation takes much longer, and a warm-up
+makes a less of a difference for long operations. It also requires less iterations to measure
+accurately, so simply measure the time it takes to perform 7000 contains, and divide by the
+number of iterations
+
+javac -cp *.java
+
+javac Ex4Utils.java Ex4Utils.java SimpleHashSet.java OpenHashSet.java ClosedHashSet.java CollectionFacadeSet.java SimpleSetPerformanceAnalyzer.java
+
+jar cvf ex4.jar *.java RESULTS  README

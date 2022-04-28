@@ -1,0 +1,36 @@
+bar246802
+
+
+
+
+=============================
+=      File description     =
+=============================
+Book.java - This class represents a book, which has a title, author, year of publication and different literary aspects.
+Patron.java - This class represents a library patron that has a name and assigns values to different literary aspects of books.
+Library.java - This class represents a library, which hold a collection of books.
+
+
+
+=============================
+=          Design           =
+=============================
+I implemented the Book, Patron & Library classes with the given API who was supplied to use.
+The Libray class is using the Book & Patron classes - In each library there is an array of books and an array of patrons.
+When adding a new patron/book to the library we first check that he/it isn't already exist inside the relevant array & that we still have room inside according to the library capacity.
+
+
+
+=============================
+=  Implementation details   =
+=============================
+For each patron we are keeping a counter for how many books he/she is currently borrowing so he wouldn't be able to borrow more than the allowed number simultaneously.
+The suggestion method is implemented using the given patron's preferences and while taking into account the 
+current borrowed books by him - that way we won't recommend  a copy of a book is currently reading.
+
+
+
+=============================
+=    Answers to questions   =
+=============================
+No questions were asked

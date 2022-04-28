@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=TestRina
+comment1.params=
+comment1.target=void\ deleteLibraryContent()
+comment2.params=
+comment2.target=void\ getLiteraryValueTest()
+comment2.text=\r\n\ test\ for\ BOOK\ class\ tests\ each\ book\ out\ of\ 5\ books.\r\n
+comment3.params=
+comment3.target=void\ BorrowerIdTest()
+comment4.params=
+comment4.target=void\ printBookTest()
+comment5.params=
+comment5.target=void\ printPatronTest()
+comment5.text=\r\n\ test\ for\ PATRON\ class\ checks\ each\ out\ of\ 6\ patrons.\r\n
+comment6.params=
+comment6.target=void\ getBookScoreTest()
+comment7.params=
+comment7.target=void\ willEnjoyBookTest()
+comment8.params=
+comment8.target=void\ testlib1()
+comment8.text=\r\n\ two\ checks\ for\ library\ class\ objects.\r\n
+comment9.params=
+comment9.target=void\ testlib2()
+numComments=10

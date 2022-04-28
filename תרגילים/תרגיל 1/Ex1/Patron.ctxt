@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Patron
+comment0.text=\r\n\ This\ class\ represents\ a\ library\ patron\ that\ has\ a\ name\ and\r\n\ assigns\ values\ to\ different\ literary\ aspects\ of\ books.\r\n\r\n\ @author\ Bar\ Melinarskiy\r\n\ @version\ 16/8/20\r\n
+comment1.params=patronFirstName\ patronLastName\ comicTendency\ dramaticTendency\ educationalTendency\ patronEnjoymentThreshold
+comment1.target=Patron(java.lang.String,\ java.lang.String,\ int,\ int,\ int,\ int)
+comment1.text=\r\n\ Creates\ a\ new\ patron\ with\ the\ given\ characteristics.\r\n\ @param\ patronFirstName\ The\ first\ name\ of\ the\ patron.\r\n\ @param\ patronLastName\ The\ last\ name\ of\ the\ patron.\r\n\ @param\ comicTendency\ The\ weight\ the\ patron\ assigns\ to\ the\r\n\ comic\ aspects\ of\ books.\r\n\ @param\ dramaticTendency\ The\ weight\ the\ patron\ assigns\ to\r\n\ the\ dramatic\ aspects\ of\ books.\r\n\ @param\ educationalTendency\ The\ weight\ the\ patron\ assigns\r\n\ to\ the\ educational\ aspects\ of\ books.\r\n\ @param\ patronEnjoymentThreshold\ The\ minimal\ literary\ value\r\n\ a\ book\ must\ have\ for\ this\ patron\ to\ enjoy\ it.\r\n
+comment2.params=
+comment2.target=java.lang.String\ stringRepresentation()
+comment2.text=\r\n\ Returns\ a\ string\ representation\ of\ the\ patron,\ which\ is\ a\r\n\ sequence\ of\ its\ first\ and\ last\ name,\ separated\ by\ a\ single\ white\ \r\n\ space.\ For\ example,\ if\ the\ patron's\ first\ name\ is\ "Ricky"\ and\ his\r\n\ last\ name\ is\ "Bobby",\ this\ method\ will\ return\ the\ String\ "Ricky\r\n\ Bobby".\r\n\ @return\ the\ String\ representation\ of\ this\ patron.\r\n
+comment3.params=book
+comment3.target=int\ getBookScore(Book)
+comment3.text=\r\n\ Returns\ the\ literary\ value\ this\ patron\ assigns\ to\ the\ given\ book.\r\n\ @param\ book\ The\ book\ to\ asses.\r\n\ @return\ the\ literary\ value\ this\ patron\ assigns\ to\ the\ given\r\n\ book.\r\n
+comment4.params=book
+comment4.target=boolean\ willEnjoyBook(Book)
+comment4.text=\r\n\ Returns\ true\ of\ this\ patron\ will\ enjoy\ the\ given\ book,\ false\r\n\ otherwise.\r\n\ @param\ book\ The\ book\ to\ asses.\r\n\ @return\ true\ of\ this\ patron\ will\ enjoy\ the\ given\ book,\ false\ \r\n\ otherwise.\r\n
+numComments=5

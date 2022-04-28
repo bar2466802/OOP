@@ -1,0 +1,92 @@
+bar246802
+
+
+
+
+=============================
+=      File description     =
+=============================
+DirectoryProcessingExceptions.java - Class for exceptions related to the processing.
+DirectoryProcessor.java - The main class running the files processing according to user's input.
+FileInfo.java - class to store each file needed info for future usage.
+FileInfoFactory.java - Class for retrieving the files' info from the source directory.
+FileUtils.java - A utilities class for file manipulation.
+ProcessOperation.java - Class to store processing actions from the commands file.
+ProcessOperationCore.java - Class to store processing actions from the commands file.
+ProcessOperationFactory.java - Class for retrieving the desired processing tasks from the commands file.
+RegexUtils.java - Utils class for regex related methods.
+FilesFilter.java - interface for Class for filtering the files array by some properties.
+FilesFilterFactory.java - Class for creating a new filter object for the file processing operation.
+FilterAll.java - Get all the files, no filter.
+FilterByContains.java - Filter files by containing a value their name.
+FilterByExecutable.java - Filter files by executable property.
+FilterByHidden.java - Filter files by visibility.
+FilterByName.java - Filter the files by their name.
+FilterByPrefix.java - Filter the files by the prefix of their name.
+FilterBySizeBTW.java - Filter files by who's size smaller than given value.
+FilterBySizeGT.java - Filter the files who's size greater than given value.
+FilterBySizeLT.java - Filter files by who's size smaller than given value.
+FilterBySuffix.java - Filter files by the suffix of their name.
+FilterByWriteable.java - Filter files by writable property.
+FilterCommand.java - enum class for filters conts types
+FilesOrder.java - abstract Class for sorting the files array by some properties.
+FilesOrderFactory.java - Class for creating a new order object for the file processing operation.
+OrderByName.java - Class for sorting the files array by name.
+OrderBySize.java - Class for sorting the files array by size, if size eq than by name.
+OrderByType.java - Class for sorting the files array by type, if type eq than by name.
+OrderCommand.java - enum class for orders conts types.
+
+
+
+=============================
+=          Design           =
+=============================
+I designed this ex similar to ex2, with the spaceship games.
+I created a main class - DirectoryProcessor.java - to receive the user's args 
+and then created another class to process the given info in the files & folder- ProcessOperationFactory.java.
+Each filter type implements the FilesFilte interface - meaning each filter class 
+implements the filter method as the. 
+Similarly, for the order types I used an abstract class FilesOrder which every order-type extends 
+and implement the compare method.
+For the sorting itself I used a quicksort algorithm.
+
+
+
+
+=============================
+=  Implementation details   =
+=============================
+I implemented this ex by first processing the folder's files and getting all the needed info about them.
+Then I processed the Commands file and saved each section as a processing 
+operation object - ProcessOperation.java.
+In the preparation process I used a few Factory classes both for the Filter and Order 
+types of the operation and for the file's info inside the source directory.
+By creation classes for each type of filter/order we are now able to call the filter and sort methods just
+like in the Animal Class in the lessens when we were able to call the speak method and the
+relevant implement will be called - that way if we ever need to add a new type or change one
+it doesn't affect the others.
+The processing itself is done inside the DirectoryProcessor class - there we print the relevant
+warnings if needed and then filter, sort and print the files.
+
+
+
+=============================
+=    Answers to questions   =
+=============================
+1. Describe the exceptions hierarchy you used in order to handle errors in the program. Explain
+the considerations that made you choose that specific design.
+If the error was related to something specific to this project like the source folder is empty
+or the Commands file is not valid then I created a custom Exceptions inside the package
+in DirectoryProcessingExceptions.java.
+I raised up to the main class if we needed to end the processing (meaning type 2 error)
+otherwise if it was a type-1 error I only saved the warning message for future export
+and dealt with the exception inside the class.
+I used also common exceptions such as NullPointerException and UnsupportedOperationException
+If for example something went wrong with retrieving the files' info or processing
+the regex expressions for the Commands file.
+3. How did you sort your matched files? Did you use a data structure for this purpose? If so,
+what data structure and why?
+For the sorting itself I used a quicksort algorithm. I used an ArrayList 
+that way I didn't need to know in advance to number of operations it will need to store.
+Also, that way I could easily do the reverse operation thanks to Collections.reverse.
+Another point I considered was that the order of insert is preserved.

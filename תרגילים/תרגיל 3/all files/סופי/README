@@ -1,0 +1,80 @@
+bar246802
+
+
+
+
+=============================
+=      File description     =
+=============================
+Spaceship.java - This class represents a spaceship
+Locker.java - This class represents Locker inside the spaceship
+LongTermStorage.java - This class represents LTS inside the spaceship
+BasicStorage.java - This class is an abstract class for basic features of a storage unit
+BoopingSiteTest.java - This class is used test class BoopingSite
+BoopingSite.java  - This class is part of the - Booping.com - a new hotel booking site. 
+HotelSortingByProximityComparator.java -  This class is used to sort given list of hotels by proximity.
+HotelSortingByRatingsComparator.java - This class is used to sort given list of hotels by Ratings.
+LockerTest.java - This class is used test class Locker
+LongTermTest.java - This class is used test class LongTermStorage
+SpaceshipDepositoryTest.java - This class is used to run full tests on Spaceship.class,
+LockerTest.class and LongTermTest.class
+SpaceshipTest.java - this class is used test class Spaceship
+StorageWithLTS.java - an abstract class for all the methods related to an object
+ who is connected to LTS and as such has regulations to follow 
+
+
+
+=============================
+=          Design           =
+=============================
+I choose to use abstract classes such as StorageWithLTS and BasicStorage in order to reuse the features
+shared btw the object who have these properties.
+The StorageWithLTS extends the BasicStorage.
+The locker extends inheritance from StorageWithLTS .
+The LongTermStorage BasicStorage.
+If I could I would have used interfaces with defualt implemntions of method - that way I could have
+divided the code more to subjects such as LTS and constraints..
+
+
+
+
+=============================
+=  Implementation details   =
+=============================
+Regarding the hotels I implemented two Comparator classes: HotelSortingByProximityComparator and 
+HotelSortingByRatingsComparator in order to sort the list of hotels.
+I used arraylist to store the hotels inside the different method due to the ease we can sort 
+it with the Collections.sort and moving back and forth btw arrays and arraylist .
+
+In the tests I used the approach of creating a test method for each respective method in the
+tested class - in same cases I saw fit to divide the testing of the testing into sub-methods
+who were called from the current main method.
+
+I used formatters to export the messages in all the classes - that way I could add parameters more easily.
+
+
+
+=============================
+=    Answers to questions   =
+=============================
+
+1) Locker - Q: How did you choose to store the information? Why did you prefer it to other methods?
+A: I choose to store the storage information inside a HashMap - that way I could easily get 
+the count of an existing item and all the other method around storing and removing an item.
+If I have chosen a simple array I would have to implement all these method myself.
+2)LTS -  Q: How did you choose to store the information? How is it different from Locker.java?
+A: regarding the inventory the answer is the same as the locker but here we only extend 
+the BasicStorage abstract class so we obviously don't have or need the connected LTS and constraints.
+3) Q: explain how you chose the dataset for each test
+A:  After realizing the first dataset is all the cities, the second is only one city and 
+the last one is empty I made the decision as such:
+In must of the tests I used all 3 datasets - and with each dataset I could test another aspect because
+with the first I could test more the one city for example, with the second I could test the behavior
+with small amount of data and the fact that all the hotels were in the same city made it easy to check 
+the returned length is correct. The last dataset was allways used in actions were I 
+wanted to make sure the tested method still return empty array even though the dataset is empty.
+4) Q: Hotel - Explain your design decisions. What were your options? Why did you prefer one over another?
+A: I covered some of this in Implementation details, the part about the Comparator classes was very much
+obligatory but I could have choose other collections such as map
+as I said before I choose the arraylist due to the ease we can sort it with the Collections.sort 
+and moving back and forth btw arrays and arraylist.
